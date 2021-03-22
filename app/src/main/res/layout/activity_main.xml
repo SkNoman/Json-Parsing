@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    >
+   <Button
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:textColor="@color/colorPrimaryDark"
+       android:textAllCaps="false"
+       android:text="List View"
+       android:background="@color/colorAccent"
+       android:id="@+id/blistview"
+       >
+
+
+
+   </Button>
+   <Button
+       android:layout_marginTop="20dp"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:text="View Data"
+       android:textAllCaps="false"
+       android:textColor="@color/colorPrimaryDark"
+       android:background="@drawable/ic_launcher_background"
+       android:id="@+id/b1"
+       >
+
+   </Button>
+   <ScrollView
+       android:layout_width="350dp"
+       android:layout_height="match_parent"
+       android:padding="20dp"
+       android:layout_gravity="center"
+       >
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:id="@+id/t1"
+          android:textStyle="bold"
+          android:textSize="25sp"
+          >
+
+      </TextView>
+   </ScrollView>
+
+</LinearLayout>
