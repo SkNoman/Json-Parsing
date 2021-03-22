@@ -1,0 +1,1 @@
+Andoroid app for parsing json data , the data comes from mysql database using api
