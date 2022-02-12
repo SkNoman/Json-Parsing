@@ -7,19 +7,25 @@
     tools:context=".MainActivity"
     android:orientation="vertical"
     >
+
+
+
+
+
+
+
    <Button
-       android:layout_width="match_parent"
+       android:id="@+id/emp_info_btn"
+       android:layout_width="wrap_content"
        android:layout_height="wrap_content"
-       android:textColor="@color/colorPrimaryDark"
+       android:layout_gravity="center"
+       android:layout_marginTop="20dp"
+       android:backgroundTint="#00000000"
+
        android:textAllCaps="false"
-       android:text="List View"
-       android:background="@color/colorAccent"
-       android:id="@+id/blistview"
-       >
+       android:text="Next Page > " />
 
 
-
-   </Button>
    <Button
        android:layout_marginTop="20dp"
        android:layout_width="match_parent"
@@ -35,18 +41,20 @@
    <ScrollView
        android:layout_width="350dp"
        android:layout_height="match_parent"
-       android:padding="20dp"
        android:layout_gravity="center"
        >
       <TextView
           android:layout_width="match_parent"
           android:layout_height="match_parent"
           android:id="@+id/t1"
-          android:textStyle="bold"
-          android:textSize="25sp"
+          android:textStyle="normal"
+          android:textColor="#080909"
+          android:padding="10dp"
+          android:textSize="17sp"
           >
 
       </TextView>
+
    </ScrollView>
 
 </LinearLayout>

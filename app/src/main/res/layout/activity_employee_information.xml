@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Employee_Information">
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter City Name/ID:"
+        android:padding="10dp"
+        android:layout_margin="20dp"
+        android:id="@+id/edit_text_search_emp"
+        />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Get City Id"
+        android:textAllCaps="false"
+        android:padding="10dp"
+        android:layout_margin="10dp"
+        android:id="@+id/city_id_btn"
+        />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Weather By Id"
+            android:textAllCaps="false"
+            android:padding="10dp"
+            android:layout_margin="10dp"
+            android:id="@+id/weather_by_id_btn"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Weather By Name"
+            android:textAllCaps="false"
+            android:padding="10dp"
+            android:layout_margin="10dp"
+            android:id="@+id/weather_by_name_btn"
+            />
+
+
+
+</LinearLayout>
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressbar_id"
+        android:layout_gravity="center"
+        android:layout_marginTop="240dp"
+        />
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:id="@+id/listview"
+        android:divider="@color/colorAccent"
+        android:dividerHeight="2dp"
+
+        >
+
+    </ListView>
+
+
+
+
+</LinearLayout>

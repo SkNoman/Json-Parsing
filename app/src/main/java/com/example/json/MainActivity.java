@@ -8,7 +8,9 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -24,7 +26,10 @@ import java.net.URL;
 
 public class MainActivity extends AppCompatActivity {
     private TextView t1;
-    private Button b1,blistview;
+    private Button b1,Emp_info,showset;
+    EditText editText;
+    String set;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,25 +37,20 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         b1 = findViewById(R.id.b1);
         t1 = findViewById(R.id.t1);
-        blistview = findViewById(R.id.blistview);
+        Emp_info = findViewById(R.id.emp_info_btn);
         jsonTask jTask = new jsonTask();
         jTask.execute();
 
-        blistview.setOnClickListener(new View.OnClickListener() {
+        Emp_info.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                openActivity2();
-
+                 Intent intent = new Intent(getApplicationContext(),Employee_Information.class);
+                 startActivity(intent);
             }
         });
     }
 
-    private void openActivity2()
-    {
-        Intent intent = new Intent(this,MainActivity2.class);
-        startActivity(intent);
-    }
+
 
     public class jsonTask extends AsyncTask<String,String,String>{
 
@@ -64,7 +64,8 @@ public class MainActivity extends AppCompatActivity {
             String country;
 
             try {
-                URL url = new URL("https://raw.githubusercontent.com/sknoman77/jsontest/main/db.json");
+                URL url = new URL("https://apex.oracle.com/pls/apex/noman_live_schema/emp_info/");
+                //URL url = new URL("https://raw.githubusercontent.com/sknoman77/jsontest/main/db.json");
                 httpURLConnection = (HttpURLConnection) url.openConnection();
                 InputStream inputStream = httpURLConnection.getInputStream();
                 bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
@@ -77,16 +78,25 @@ public class MainActivity extends AppCompatActivity {
                 }
                 String file = stringBuffer.toString();
                 JSONObject fileObject = new JSONObject(file);
-                JSONArray jsonArray = fileObject.getJSONArray("studentAddress");
+                JSONArray jsonArray = fileObject.getJSONArray("items");
                 for(int i=0; i<jsonArray.length();i++)
                 {
                     JSONObject arrayObject = jsonArray.getJSONObject(i);
-                    name = arrayObject.getString("Name");
-                    country = arrayObject.getString("locality");
-                    id = arrayObject.getInt("id");
-                    hno = arrayObject.getInt("H.No");
 
-                    lastbuffer.append("Name:"+name+"\n"+"ID:"+id+"\n"+"Country:"+country+"\n"+hno+"\n\n");
+                    name = arrayObject.getString("emp_name");
+                    country = arrayObject.getString("email_id");
+                    id = arrayObject.getInt("mobile_no");
+                    hno = arrayObject.getInt("emp_id");
+
+
+                    lastbuffer.append("Name:"+name+"\n"+"Phone:"+id+"\n"+"Country:"+country+"\n"+"Id:"+hno+"\n\n");
+
+                    //arrayObject.put(String.valueOf(Integer.parseInt("institute_id")),1003);
+                    //arrayObject.put("emp_name","Mr Alex");
+                     //arrayObject.put("emp_name","Mr Alex");
+
+
+
                 }
 
                 return lastbuffer.toString();
